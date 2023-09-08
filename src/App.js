@@ -1,7 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import getPoems from './ApiCalls';
 
 function App() {
+  const [poems, setPoems] = useState([])
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    getPoems()
+    .then(data => setPoems(data.poems))
+    .catch(err => setError(err.message))
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
