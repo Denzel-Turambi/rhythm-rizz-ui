@@ -8,4 +8,8 @@ function getPoems() {
     })
 }
 
+function postPoem() {
+  
+}
+
 export default getPoems;
