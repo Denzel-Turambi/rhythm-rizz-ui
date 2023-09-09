@@ -1,5 +1,6 @@
 body {
-  background: #080F0F;
+  background-image: url('inkblots.jpeg');
+  background-size: cover;
 }
 
 .App {
