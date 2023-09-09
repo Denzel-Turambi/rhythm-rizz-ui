@@ -19,9 +19,12 @@ function App() {
   console.log('Hello')
   console.log(poems)
   return (
-    <div className="App">
-    <Poems poems={poems}/>
-    </div>
+    <main className="App">
+      <nav>
+        <h1 className="logo-title">~ Rhythm & Rizz ~</h1>
+      </nav>
+      <Poems poems={poems}/>
+    </main>
   );
 }
 
