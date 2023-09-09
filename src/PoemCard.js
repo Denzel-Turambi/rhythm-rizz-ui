@@ -1,9 +1,11 @@
+import './PoemCard.css'
+
 export default function poemCard({title, author, id, poem}){
   return (
-    <div className="poemCard">
-      <h1>title: {title}</h1>
-      <h2>author: {author}</h2>
-      <p>{poem}</p>
+    <div className="poem-card">
+      <h1 className="poem-title">{title}</h1>
+      <h2 className="poem-author">Written by {author}</h2>
+      <p className="poem-text">{poem}</p>
     </div>
   )
 }
