@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
-import getPoems from './ApiCalls';
+import { getPoems } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
 

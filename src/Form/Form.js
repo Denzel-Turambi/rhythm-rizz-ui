@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Form.css'
+import { postPoem } from "../ApiCalls";
 
 function Form({addPoem}) {
     const [title, setTitle] = useState('')
@@ -14,6 +15,7 @@ function Form({addPoem}) {
             author,
             poem
         }
+        postPoem(newPoem)
         addPoem(newPoem)
         clearInput()
     }

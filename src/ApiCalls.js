@@ -8,8 +8,17 @@ function getPoems() {
     })
 }
 
-function postPoem() {
-  
+function postPoem(poem) {
+  return fetch('http://localhost:3000/api/v1/poems', {
+    method: 'POST',
+    body: JSON.stringify(poem),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => response.json())
 }
 
-export default getPoems;
+export {
+  getPoems,
+  postPoem
+} 
