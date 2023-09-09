@@ -21,7 +21,7 @@ function App() {
   return (
     <main className="App">
       <nav>
-        <h1 className="logo-title">~ Rhythm & Rizz ~</h1>
+        <h1 className="logo-title">Rhythm & Rizz</h1>
       </nav>
       <Poems poems={poems}/>
     </main>
