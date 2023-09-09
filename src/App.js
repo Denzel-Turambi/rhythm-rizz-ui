@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
-import getPoems from './ApiCalls';
+import {getPoems} from './ApiCalls';
 import Poems from './Poems';
+import SinglePoemCard from './singlePoem/PoemCard';
 
 function App() {
   const [poems, setPoems] = useState([])
@@ -20,7 +21,8 @@ function App() {
   console.log(poems)
   return (
     <div className="App">
-    <Poems poems={poems}/>
+    {/* <Poems poems={poems}/> */}
+    <SinglePoemCard />
     </div>
   );
 }

@@ -1,9 +1,11 @@
-function SinglePoemCard() {
+import './Poem.css'
+
+function SinglePoemCard({ title, author, poem }) {
   return (
-    <div>
-      <h2>Title</h2>
-      <p>author</p>
-      <p>poem</p>
+    <div className='single-poem-container'>
+      <h2>{title}</h2>
+      <p>{author}</p>
+      <p>{poem}</p>
     </div>
   )
 }
