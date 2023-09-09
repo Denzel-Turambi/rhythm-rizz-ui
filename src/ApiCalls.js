@@ -11,6 +11,20 @@ function getPoems() {
   })
 }
 
+function postPoem(poem) {
+  return fetch('http://localhost:3000/api/v1/poems', {
+    method: 'POST',
+    body: JSON.stringify(poem),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => response.json())
+}
+
+export {
+  getPoems,
+  postPoem
+} 
 function getPoemById(id) {
   fetch(`http://localhost:3000/api/v1/poems/${id}`)
   .then((res) => {

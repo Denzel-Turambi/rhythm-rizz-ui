@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
+import { getPoems } from './ApiCalls';
 import {getPoems} from './ApiCalls';
 import Poems from './Poems';
+import Form from './Form/Form';
 import SinglePoemCard from './singlePoem/PoemCard';
 
 function App() {
@@ -17,12 +19,15 @@ function App() {
     .catch(err => setError(err.message))
   }, [])
   
-  console.log('Hello')
-  console.log(poems)
+  function addPoem(newPoem) {
+    setPoems([...poems, newPoem])
+  }
+
   return (
     <div className="App">
     {/* <Poems poems={poems}/> */}
     <SinglePoemCard />
+    <Form addPoem={addPoem} />
     </div>
   );
 }
