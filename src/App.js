@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 import getPoems from './ApiCalls';
+import Poems from './Poems';
 
 function App() {
   const [poems, setPoems] = useState([])
@@ -9,26 +10,17 @@ function App() {
 
   useEffect(() => {
     getPoems()
-    .then(data => setPoems(data.poems))
+    .then(data => {
+      setPoems(data.poems)
+    })
     .catch(err => setError(err.message))
   }, [])
-
+  
+  console.log('Hello')
+  console.log(poems)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Poems poems={poems}/>
     </div>
   );
 }
