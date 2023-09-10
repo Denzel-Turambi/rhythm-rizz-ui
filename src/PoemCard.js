@@ -1,4 +1,4 @@
-export default function poemCard({title, author, id, poem}){
+export default function poemCard({title, author, poem}){
   return (
     <div className="poemCard">
       <h1>title: {title}</h1>
