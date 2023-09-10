@@ -1,6 +1,15 @@
+.single-poem-card {
+  display: flex;
+  flex-direction: column;
+  background: #E8EDEC;
+  width: 80vw;
+  margin-top: 32px;
+  padding: 16px;
+  font-family: 'Lexend', sans-serif;
+}
+
 .single-poem-container {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
