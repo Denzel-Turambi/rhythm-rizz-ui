@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
-import getPoems from './ApiCalls';
+import { getPoems, postPoem } from './ApiCalls';
 import Poems from './Poems';
+import Form from './Form/Form';
+import SinglePoem from './singlePoem/SinglePoem';
+import {Routes, Route, Link} from "react-router-dom"
 
 function App() {
   const [poems, setPoems] = useState([])
@@ -14,17 +17,25 @@ function App() {
       setPoems(data.poems)
     })
     .catch(err => setError(err.message))
-  }, [])
-  
-  console.log('Hello')
-  console.log(poems)
+  }, [poems])
+
   return (
-    <main className="App">
-      <nav>
+    <div className="App">
+       <nav>
         <h1 className="logo-title">Rhythm & Rizz</h1>
       </nav>
-      <Poems poems={poems}/>
-    </main>
+      <Link to={"/form"}>
+        <button>Form</button>
+      </Link>
+      <Link to={"/"}>
+        <button>Poems</button>
+      </Link>
+    <Routes>
+      <Route path="/" element={<Poems poems={poems} />}/>
+      <Route path="/:id" element={<SinglePoem poems={poems} />}/>
+      <Route path="/form" element={<Form />}/>
+    </Routes>
+    </div>
   );
 }
 

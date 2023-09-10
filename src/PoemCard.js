@@ -1,6 +1,6 @@
 import './PoemCard.css'
 
-export default function poemCard({title, author, id, poem}){
+export default function poemCard({title, author, poem}){
   return (
     <div className="poem-card">
       <h1 className="poem-title">{title}</h1>
