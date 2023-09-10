@@ -5,6 +5,7 @@ import { getPoems } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
 import SinglePoem from './singlePoem/Poem';
+import {Routes, Route} from "react-router-dom"
 
 function App() {
   const [poems, setPoems] = useState([])
@@ -24,9 +25,11 @@ function App() {
 
   return (
     <div className="App">
-    <Poems poems={poems}/>
-    <SinglePoem poems={poems} />
-    <Form addPoem={addPoem} />
+    <Routes>
+      <Route path="/" element={<Poems poems={poems} />}/>
+      <Route path="/:id" element={<SinglePoem poems={poems} />}/>
+      <Route path="/form" element={<Form addPoem={addPoem} />}/>
+    </Routes>
     </div>
   );
 }
