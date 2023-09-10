@@ -21,15 +21,17 @@ function App() {
 
   return (
     <div className="App">
-       <nav>
+       <nav className="nav">
         <h1 className="logo-title">Rhythm & Rizz</h1>
+        <div className="nav-buttons">
+          <Link to={"/form"}>
+            <button className="nav-button">Add New Poem</button>
+          </Link>
+          <Link to={"/"}>
+            <button className="nav-button">Poems</button>
+          </Link>
+        </div>
       </nav>
-      <Link to={"/form"}>
-        <button>Form</button>
-      </Link>
-      <Link to={"/"}>
-        <button>Poems</button>
-      </Link>
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
       <Route path="/:id" element={<SinglePoem poems={poems} />}/>
