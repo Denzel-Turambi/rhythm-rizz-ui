@@ -3,6 +3,9 @@
   padding: 16px;
   font-family: 'Lexend', sans-serif;
   color: black;
+  width: 30vw;
+  height: 16vh;
+  overflow: hidden
 }
 
 .poem-card:hover {
