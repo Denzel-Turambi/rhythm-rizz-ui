@@ -21,10 +21,6 @@ function postPoem(poem) {
   }).then(response => response.json())
 }
 
-export {
-  getPoems,
-  postPoem
-} 
 function getPoemById(id) {
   fetch(`http://localhost:3000/api/v1/poems/${id}`)
   .then((res) => {
@@ -38,5 +34,6 @@ function getPoemById(id) {
 
 export {
   getPoems,
-  getPoemById
+  getPoemById,
+  postPoem
 }

@@ -1,34 +1,30 @@
 import { getPoemById } from "../ApiCalls";
 import SinglePoemCard from "./PoemCard";
+import { useState, useEffect } from "react";
 
-function SinglePoem() {
-  const [selectedPoem, setSelectedPoem] = useState('')
+function SinglePoem({poems}) {
+  const [selectedPoem, setSelectedPoem] = useState({})
 
   useEffect(() => {
-    getPoemById(1)
-    .then((data) => {
-        setSelectedPoem(data.poem)
-        console.log("data", data)
-          })
-          .catch((error) => {
-            console.log('Error getting poem by id', error)
-          })
+    setSelectedPoem(findPoem('1'))
+    console.log(selectedPoem)
        }, [])
+
+  function findPoem(id) {
+    const selectedPoemObject = poems.find(poem => poem.id === id)
+    return selectedPoemObject
+  }
       
-  const poemCard = (
+  const poemCard = selectedPoem && (
     <SinglePoemCard
       id={selectedPoem.id}
       title={selectedPoem.title}
       author={selectedPoem.author}
       poem={selectedPoem.poem}
     />
-  );
+  )
 
   return <div>{poemCard}</div>;
   }
 
 export default SinglePoem;
-
-
-// add get fetch request to get the poems by id (api file)
-
