@@ -22,7 +22,7 @@ function postPoem(poem) {
 }
 
 function getPoemById(id) {
-  fetch(`http://localhost:3000/api/v1/poems/${id}`)
+  return fetch(`http://localhost:3000/api/v1/poems/${id}`)
   .then((res) => {
     if(!res.ok){
       throw new Error (`${res.status}`)
