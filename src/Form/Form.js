@@ -2,21 +2,22 @@ import { useState } from "react";
 import './Form.css'
 import { postPoem } from "../ApiCalls";
 
-function Form({addPoem}) {
+function Form() {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [poem, setPoem] = useState('')
 
     function submitPoem(event) {
+        const now = Date.now()
+        const id = now.toString()
         event.preventDefault()
         const newPoem = {
-            id: Date.now(),
+            id: id,
             title,
             author,
             poem
         }
         postPoem(newPoem)
-        addPoem(newPoem)
         clearInput()
     }
 
