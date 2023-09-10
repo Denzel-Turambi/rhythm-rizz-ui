@@ -19,13 +19,14 @@ body {
   display: flex;
   justify-content: space-between;
   background: black;
+  width: 100vw;
 }
 
 .nav-buttons {
-  width: 32vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 }
 
 .nav-button {
@@ -33,6 +34,7 @@ body {
   background: black;
   color: white;
   border: none;
+  margin: 0 32px 0 0;
   padding: 16px;
   font-family: 'Lexend', sans-serif;
   font-size: 110%;

@@ -28,8 +28,9 @@ function Form() {
     }
 
     return (
-        <form>
+        <form className="form-container">
             <input
+            className="form-input"
             type="text"
             placeholder="Title"
             name="title"
@@ -37,20 +38,22 @@ function Form() {
             onChange={event => setTitle(event.target.value)}
             />
             <input
+            className="form-input"
             type="text"
             placeholder="Author"
             name="author"
             value={author}
             onChange={event => setAuthor(event.target.value)}
             />
-            <input
+            <textarea rows="8" cols="50"
+            className="form-input"
             type="text"
             placeholder="Poem"
             name="poem"
             value={poem}
             onChange={event => setPoem(event.target.value)}
             />
-            <button onClick={event => submitPoem(event)}>SUBMIT</button>
+            <button className="form-button" onClick={event => submitPoem(event)}><strong>SUBMIT</strong></button>
         </form>
     )
 
