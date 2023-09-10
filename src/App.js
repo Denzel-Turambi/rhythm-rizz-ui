@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { getPoems } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
+import SinglePoem from './singlePoem/Poem';
 
 function App() {
   const [poems, setPoems] = useState([])
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="App">
     <Poems poems={poems}/>
+    <SinglePoem poems={poems} />
     <Form addPoem={addPoem} />
     </div>
   );

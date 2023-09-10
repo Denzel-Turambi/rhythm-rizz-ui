@@ -1,8 +1,7 @@
 import './Poems.css'
 import PoemCard from './PoemCard'
 
-export default function Poems({poems}){
- 
+ function Poems({poems}){
   const poemCards = poems.map(poem => {
     return (
       <PoemCard
@@ -20,3 +19,5 @@ export default function Poems({poems}){
     </div>
   )
 }
+
+export default Poems
