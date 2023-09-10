@@ -1,17 +1,14 @@
 import { useParams } from "react-router-dom";
 import SinglePoemCard from "./PoemCard";
 import { useState, useEffect } from "react";
+import { getPoemById } from "../ApiCalls";
 
 function SinglePoem({poems}) {
   const [selectedPoem, setSelectedPoem] = useState({})
   const {id} = useParams()
 
-  function findPoem(id) {
-    const selectedPoemObject = poems.find(poem => poem.id.toString() === id)
-    return selectedPoemObject
-  }
   useEffect(() => {
-    setSelectedPoem(findPoem(id))
+    getPoemById(id).then(data => setSelectedPoem(data.poem))
     }, [])
 
       
