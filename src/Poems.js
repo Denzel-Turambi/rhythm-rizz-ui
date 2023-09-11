@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
  function Poems({poems}){
   const poemCards = poems.map(poem => {
     return (
-      <Link to={`/${poem.id}`} key={poem.id} style={{textDecoration:'none'}}>
+      <Link to={`/${poem.id}`} key={poem.id} id="poems" style={{textDecoration:'none'}}>
         <PoemCard
           key={poem.id}
           title={poem.title}
@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom'
     )
   })
   return (
-    <div className="poems-container">
+    <div className="poems-container" >
       {poemCards}
     </div>
   )

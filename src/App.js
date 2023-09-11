@@ -17,7 +17,7 @@ function App() {
       setPoems(data.poems)
     })
     .catch(err => setError(err.message))
-  }, [poems])
+  }, [])
 
   return (
     <div className="App">
