@@ -7,8 +7,7 @@ import PropTypes from 'prop-types'
 function SinglePoem({ poems }) {
   const [selectedPoem, setSelectedPoem] = useState({})
   const { id } = useParams()
- console.log(poems)
-//  console.log(typeof selectedPoem.poem, "poem")
+
   useEffect(() => {
     getPoemById(id).then(data => setSelectedPoem(data.poem))
     }, [id])
