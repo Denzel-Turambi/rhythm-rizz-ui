@@ -10,7 +10,7 @@ import {Routes, Route, Link, useParams} from "react-router-dom"
 function App() {
   const [poems, setPoems] = useState([])
   const [error, setError] = useState('')
-  const params = useParams()
+  // const params = useParams()
 
   useEffect(() => {
     getPoems()
@@ -18,7 +18,7 @@ function App() {
       setPoems(data.poems)
     })
     .catch(err => setError(err.message))
-  }, [params])
+  }, [])
 
   return (
     <div className="App">

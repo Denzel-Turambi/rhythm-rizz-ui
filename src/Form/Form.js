@@ -9,11 +9,7 @@ function Form({poems, setPoems}) {
     const [poem, setPoem] = useState('')
 
     function submitPoem(event) {
-        // const now = Date.now()
-        // const id = now.toString()
-        // event.preventDefault()
         const newPoem = {
-            // id: id,
             title,
             author,
             poem
@@ -23,7 +19,6 @@ function Form({poems, setPoems}) {
             const updatedPoems = poems && [...poems, data]
             setPoems(updatedPoems)
         })
-        // setPoems(updatedPoems)
         clearInput()
     }
 
