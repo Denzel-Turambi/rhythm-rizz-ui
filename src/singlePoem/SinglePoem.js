@@ -30,7 +30,7 @@ export default SinglePoem;
 
 SinglePoem.propTypes = {
   poems: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     title: PropTypes.string,
     author: PropTypes.string,
     poem: PropTypes.string
