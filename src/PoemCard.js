@@ -1,6 +1,6 @@
 import './PoemCard.css'
 
-export default function poemCard({title, author, poem}){
+function poemCard({title, author, poem}){
   return (
     <div className="poem-card">
       <h1 className="poem-title">{title}</h1>
@@ -9,3 +9,5 @@ export default function poemCard({title, author, poem}){
     </div>
   )
 }
+
+export default poemCard

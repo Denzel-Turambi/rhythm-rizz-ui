@@ -1,6 +1,7 @@
 import './Poems.css'
 import PoemCard from './PoemCard'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
  function Poems({poems}){
   const poemCards = poems.map(poem => {
@@ -24,3 +25,12 @@ import { Link } from 'react-router-dom'
 }
 
 export default Poems
+
+Poems.propTypes = {
+  poems: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    title: PropTypes.string,
+    author: PropTypes.string,
+    poem: PropTypes.string
+  }))
+}
