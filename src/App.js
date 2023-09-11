@@ -5,11 +5,12 @@ import { getPoems, postPoem } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
 import SinglePoem from './singlePoem/SinglePoem';
-import {Routes, Route, Link} from "react-router-dom"
+import {Routes, Route, Link, useParams} from "react-router-dom"
 
 function App() {
   const [poems, setPoems] = useState([])
   const [error, setError] = useState('')
+  // const params = useParams()
 
   useEffect(() => {
     getPoems()
@@ -24,18 +25,18 @@ function App() {
        <nav className="nav">
         <h1 className="logo-title">Rhythm & Rizz</h1>
         <div className="nav-buttons">
-          <Link to={"/form"}>
-            <button className="nav-button">Add New Poem</button>
+          <Link to={"/"} className="nav-button">
+          All Poems
           </Link>
-          <Link to={"/"}>
-            <button className="nav-button">Poems</button>
+          <Link to={"/form"} className="nav-button">
+          Add New Poem
           </Link>
         </div>
       </nav>
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
       <Route path="/:id" element={<SinglePoem poems={poems} />}/>
-      <Route path="/form" element={<Form />}/>
+      <Route path="/form" element={<Form poems={poems} setPoems={setPoems} />}/>
     </Routes>
     </div>
   );
