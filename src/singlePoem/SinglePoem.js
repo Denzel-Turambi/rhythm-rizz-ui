@@ -10,7 +10,7 @@ function SinglePoem({ poems }) {
 
   useEffect(() => {
     getPoemById(id).then(data => setSelectedPoem(data.poem))
-    }, [id])
+    }, [])
 
       
   const poemCard = selectedPoem ? (

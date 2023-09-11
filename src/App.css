@@ -38,6 +38,7 @@ body {
   padding: 16px;
   font-family: 'Lexend', sans-serif;
   font-size: 110%;
+  text-decoration: none;
 }
 
 .nav-button:hover {
