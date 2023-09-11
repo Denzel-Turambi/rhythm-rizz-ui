@@ -1,0 +1,22 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10vh;
+}
+
+.form-input {
+  margin: 8px;
+  padding: 4px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.form-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  background: rgb(233, 24, 24);
+  padding: 16px;
+}

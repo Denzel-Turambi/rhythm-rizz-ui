@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
  function Poems({poems}){
   const poemCards = poems.map(poem => {
     return (
-      <Link to={`/${poem.id}`} key={poem.id} >
+      <Link to={`/${poem.id}`} key={poem.id} style={{textDecoration:'none'}}>
         <PoemCard
           key={poem.id}
           title={poem.title}
