@@ -1,0 +1,16 @@
+{
+  "poems": [
+    {
+    "id": "1",
+    "title": "Happy Day",
+    "author": "Kapowies",
+    "poem": "On a happy day, the sun does shine, Its golden rays, a gift divine.The world awakens with a cheerful song,As nature's beauty dances along."
+    },
+    {
+    "id": "2",
+    "title": "Sad Day",
+    "author": "Kapowies",
+    "poem": "On a somber day, the skies are gray, As tears of rain obscure the way. A heavy heart burdened with sorrow, Longs for a brighter, hopeful tomorrow."
+    }
+  ]
+}
