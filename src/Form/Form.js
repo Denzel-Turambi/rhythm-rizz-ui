@@ -8,7 +8,6 @@ function Form({ poems, setPoems }) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [poem, setPoem] = useState("");
-  console.log(setPoems, "setPoems")
 
   function submitPoem(event) {
     const newPoem = {
