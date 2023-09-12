@@ -20,5 +20,6 @@ describe('all ellements on the home page', () => {
     .get('.poem-title').contains('h1','Happy Day')
     .get('.poem-author').contains('h2','Written by Kapowies')
     .get('.poem-text').contains('p', "On a happy day, the sun does shine, Its golden rays, a gift divine.The world awakens with a cheerful song, As nature's beauty dances along.")
+    .get('.nav-buttons').should("be.visible")
   })
 })
