@@ -1,11 +1,11 @@
 describe('all ellements on the home page', () => {
   beforeEach(()=>{
     cy.intercept('GET', 'http://localhost:3000/api/v1/poems', {
-      statusCode: 200,
+      statusCode: 201,
       fixture: 'poems'
     }).as("poems")
     cy.intercept('GET', 'http://localhost:3000/api/v1/poems/1', {
-      statusCode: 200,
+      statusCode: 201,
       fixture: 'selectPoem'
     }).as("selectPoem")
   })
