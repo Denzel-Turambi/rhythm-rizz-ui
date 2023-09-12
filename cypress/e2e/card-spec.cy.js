@@ -11,10 +11,8 @@ describe('all ellements on the home page', () => {
   })
 
   it('should show a selected poem page', () => {
-    cy.visit('http://localhost:3001/')
-    .wait("@poems")
-    .get('.poem-card').first().click()
-    .wait("@selectPoem")
+    cy.visit('http://localhost:3001/').wait("@poems")
+    .get('.poem-card').first().click().wait("@selectPoem")
     .url().should('contain', '/1')
     .get('.single-poem-card').should('have.length', 1).should('be.visible')
     .get('.poem-title').contains('h1','Happy Day')
