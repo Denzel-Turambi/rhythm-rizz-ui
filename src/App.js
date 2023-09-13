@@ -5,7 +5,9 @@ import { getPoems, postPoem } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
 import SinglePoem from './singlePoem/SinglePoem';
-import {Routes, Route, Link, useParams} from "react-router-dom"
+import {Routes, Route, Link} from "react-router-dom"
+import Error404 from './ErrorHandling/Error404';
+
 
 function App() {
   const [poems, setPoems] = useState([])
@@ -41,8 +43,9 @@ function App() {
       </nav>
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
-      <Route path="/:id" element={<SinglePoem poems={poems} />}/>
+      <Route path="/:id" element={<SinglePoem poems={poems} setError={setError}/>}/>
       <Route path="/form" element={<Form handleFormClick={handleFormClick} />}/>
+      <Route path="*" element={<Error404 />}/>
     </Routes>
     </div>
   );
