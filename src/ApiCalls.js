@@ -24,10 +24,6 @@ function postPoem(poem) {
     }
     return response.json();
   })
-  .catch(error => {
-    console.log('Error', error);
-    throw error;
-  })
 }
 
 function getPoemById(id) {
