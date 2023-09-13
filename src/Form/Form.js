@@ -4,7 +4,7 @@ import { postPoem } from "../ApiCalls";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Form({ poems, setPoems }) {
+function Form({ handleFormClick }) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [poem, setPoem] = useState("");
@@ -16,8 +16,7 @@ function Form({ poems, setPoems }) {
       poem,
     };
     postPoem(newPoem).then((data) => {
-      const updatedPoems = poems && [...poems, data];
-      setPoems(updatedPoems);
+      handleFormClick(data)
     });
     clearInput();
   }
