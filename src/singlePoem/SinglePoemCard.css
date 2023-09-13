@@ -1,3 +1,10 @@
+.single-poem-container {
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .single-poem-card {
   display: flex;
   flex-direction: column;
@@ -6,10 +13,4 @@
   margin-top: 32px;
   padding: 16px;
   font-family: 'Lexend', sans-serif;
-}
-
-.single-poem-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

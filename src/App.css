@@ -4,8 +4,7 @@ body {
 }
 
 .App {
-  width: 100vw;
-  height: 100vh;
+  overflow: hidden;
 }
 
 .logo-title {
@@ -20,6 +19,10 @@ body {
   justify-content: space-between;
   background: black;
   width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .nav-buttons {
@@ -44,4 +47,18 @@ body {
 .nav-button:hover {
   border-bottom: 8px solid red;
   transition: 0.3s;
+}
+
+@media screen and (max-width: 975px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-title {
+    color: white;
+    font-size: 300%;
+    text-align: center;
+  }
+
 }
