@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import SinglePoemCard from "./PoemCard";
+import SinglePoemCard from "./SinglePoemCard";
 import { useState, useEffect } from "react";
 import { getPoemById } from "../ApiCalls";
 import PropTypes from 'prop-types'

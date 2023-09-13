@@ -4,11 +4,10 @@ import { postPoem } from "../ApiCalls";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Form({ poems, setPoems }) {
+function Form({ handleFormClick }) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [poem, setPoem] = useState("");
-  console.log(setPoems, "setPoems")
 
   function submitPoem(event) {
     const newPoem = {
@@ -17,8 +16,7 @@ function Form({ poems, setPoems }) {
       poem,
     };
     postPoem(newPoem).then((data) => {
-      const updatedPoems = poems && [...poems, data];
-      setPoems(updatedPoems);
+      handleFormClick(data)
     });
     clearInput();
   }
@@ -78,6 +76,5 @@ Form.propTypes = {
       author: PropTypes.string,
       poem: PropTypes.string,
     })
-  ),
-  setPoems: PropTypes.func
+  )
 };

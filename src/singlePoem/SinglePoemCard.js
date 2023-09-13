@@ -1,4 +1,4 @@
-import './Poem.css'
+import './SinglePoemCard.css'
 import '../PoemCard.css'
 
 function SinglePoemCard({ title, author, poem }) {
