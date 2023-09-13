@@ -18,7 +18,16 @@ function postPoem(poem) {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then(response => response.json())
+  }).then(response => {
+    if(!response.ok) {
+      throw new Error(`${response.status}`)
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.log('Error', error);
+    throw error;
+  })
 }
 
 function getPoemById(id) {
