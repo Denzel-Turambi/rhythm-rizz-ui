@@ -76,6 +76,5 @@ Form.propTypes = {
       author: PropTypes.string,
       poem: PropTypes.string,
     })
-  ),
-  setPoems: PropTypes.func
+  )
 };
