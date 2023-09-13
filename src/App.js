@@ -20,6 +20,11 @@ function App() {
     .catch(err => setError(err.message))
   }, [])
 
+  function handleFormClick(data)  {
+    const updatedPoems = poems && [...poems, data]
+            setPoems(updatedPoems)
+  }
+
   return (
     <div className="App">
        <nav className="nav">
@@ -36,7 +41,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
       <Route path="/:id" element={<SinglePoem poems={poems} />}/>
-      <Route path="/form" element={<Form poems={poems} setPoems={setPoems} />}/>
+      <Route path="/form" element={<Form handleFormClick={handleFormClick}  />}/>
     </Routes>
     </div>
   );

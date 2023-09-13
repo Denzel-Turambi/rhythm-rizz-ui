@@ -1,24 +1,59 @@
 .poem-card {
   background: #E8EDEC;
-  padding: 16px;
   font-family: 'Lexend', sans-serif;
   color: black;
-  width: 30vw;
+  width: 83%;
   height: 16vh;
-  overflow: hidden
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 1px 20px 7px hsla(240,7%,97%,1);
+  border: 5px solid black;
+  border-radius: 15px;
 }
 
 .poem-card:hover {
   background: #FFFF;
   transition: 0.5s;
+  box-shadow: 0px 1px 20px 7px red;
 }
 
 .poem-title {
   font-size: 150%;
   margin: 0 0 8px 0;
+  color: white;
+    width: 100%;
+    height: 33px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    background: black;
 }
 
 .poem-author {
   font-size: 80%;
   margin: 0px;
+}
+
+.poem-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  width: 90%;
+  margin: 0px;
+}
+
+.click-for-more {
+  margin: 0px;
+  color: white;
+  background: black;
+  width: 100%;
+  text-align: right;
+}
+
+.glasses {
+  font-size: 30px;
 }

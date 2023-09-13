@@ -1,6 +1,35 @@
 .poems-container {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding-top: 150px;
+  grid-template-columns: repeat(3, 2fr);
   grid-gap: 20px;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+justify-content: center;
 }
+
+.poems-link {
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsla(0,0%,13%,1);
+  height: 25vh;
+  border-radius: 35px;
+}
+
+@media screen and (max-width: 975px) {
+  .poems-container {
+    grid-template-columns: repeat(1, 2fr);
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .poems-link {
+    width: 90vw;
+    margin-right: 40px;
+  }
+}
+
