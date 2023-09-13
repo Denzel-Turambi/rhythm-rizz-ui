@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
  function Poems({poems}){
-  const poemCards = poems.map(poem => {
+  const poemCards = poems.sort((a,b) => b.id - a.id).map(poem => {
     return (
       <Link to={`/${poem.id}`} key={poem.id} id="poems" style={{textDecoration:'none'}}>
         <PoemCard
