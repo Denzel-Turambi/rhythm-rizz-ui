@@ -22,6 +22,6 @@ describe('New poem form', () => {
     cy.get('textarea.form-input').type('Insert Poem Here').should('have.value', 'Insert Poem Here')
     cy.get('.form-button').click().wait('@postPoems')
     cy.get('[href="/3"] > .poem-card').should('exist')
-    cy.get('.poems-container').children().last().should('contain', 'Testing Nightmare')
+    cy.get('.poems-container').children().first().should('contain', 'Testing Nightmare')
   })
 })
