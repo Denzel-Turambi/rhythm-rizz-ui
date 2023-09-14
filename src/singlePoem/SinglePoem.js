@@ -1,21 +1,30 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import SinglePoemCard from "./SinglePoemCard";
 import { useState, useEffect } from "react";
-import { getPoemById } from "../ApiCalls";
+import { getPoemById, getPoems } from "../ApiCalls";
 import PropTypes from 'prop-types'
+import './SinglePoem.css'
+
 
 function SinglePoem({ poems, setError }) {
+  
   const [selectedPoem, setSelectedPoem] = useState({})
+  const [randomPoemID, setRandomPoemID] = useState(null)
   const { id } = useParams()
 
-  useEffect(() => { 
-      getPoemById(id)
-      .then(data => setSelectedPoem(data.poem))
-      .catch(error => {setError(error.message)
-      console.log(error.message)})
-  }, [id]);
+  useEffect(() => {
+    getPoemById(id).then(data => setSelectedPoem(data.poem))
+    getPoems().then(data => {
+      
+      const randomIndex = Math.floor(Math.random() * data.poems.length)
+      const randomPoemID =  data.poems[randomIndex].id
+      setRandomPoemID(randomPoemID)
+     } )
+    }, [id])
+      
+  const poemCard = selectedPoem && (
+    <>
   
-  const poemCard = selectedPoem ? (
     <SinglePoemCard
       id={selectedPoem.id}
       key={selectedPoem.id}
@@ -23,11 +32,11 @@ function SinglePoem({ poems, setError }) {
       author={selectedPoem.author}
       poem={selectedPoem.poem}
     />
-  ) : null
+    <Link className="random-poem" to={`/${randomPoemID}`}>Next Poem</Link>
+    </>
+  )
 
-  if (selectedPoem) {
-    return <div>{poemCard}</div>;
-  }
+  return <div className="single-poem">{poemCard}</div>;
   }
 
 export default SinglePoem;

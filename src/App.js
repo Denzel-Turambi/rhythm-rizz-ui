@@ -13,8 +13,9 @@ import ErrorCard from './ErrorHandling/ErrorCard';
 function App() {
   const [poems, setPoems] = useState([])
   const [error, setError] = useState('')
+
   const location = useLocation().pathname
-  // const params = useParams()
+
 
   useEffect(() => {
     setError('')
