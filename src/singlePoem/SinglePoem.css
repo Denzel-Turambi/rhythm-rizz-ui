@@ -1,0 +1,29 @@
+.single-poem {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.random-poem {
+    text-decoration: none;
+    margin-top: 30px;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 150%;
+    color: white;
+    width: 250px;
+    height: 33px;
+    text-align: center;
+    background: black;
+    box-shadow: 0px 1px 20px 7px hsla(240,7%,97%,1);
+    border: 5px solid black;
+    border-radius: 15px;
+}
+
+.random-poem:hover {
+    transition: 0.5s;
+    box-shadow: 0px 1px 20px 7px red;
+  }
+
+

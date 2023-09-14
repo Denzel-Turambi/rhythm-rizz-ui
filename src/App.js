@@ -10,7 +10,6 @@ import {Routes, Route, Link, useParams} from "react-router-dom"
 function App() {
   const [poems, setPoems] = useState([])
   const [error, setError] = useState('')
-  // const params = useParams()
 
   useEffect(() => {
     getPoems()
