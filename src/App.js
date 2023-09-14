@@ -6,13 +6,15 @@ import { getPoems, postPoem } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
 import SinglePoem from './singlePoem/SinglePoem';
-import {Routes, Route, Link, NavLink, useLocation} from "react-router-dom"
+import {Routes, Route, Link, NavLink, useLocation} from "react-router-dom";
+import Loading from './Loading';
 import ErrorCard from './ErrorHandling/ErrorCard';
 
 
 function App() {
   const [poems, setPoems] = useState([])
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const location = useLocation().pathname
 
@@ -22,11 +24,15 @@ function App() {
   }, [location])
 
   useEffect(() => {
+    setLoading(true)
     getPoems()
     .then(data => {
       setPoems(data.poems)
+      setLoading(false)
     })
-    .catch(err => setError(err.message))
+    .catch(err => {setError(err.message)
+    setLoading(false)}
+    )
   }, [])
 
 
@@ -49,10 +55,11 @@ function App() {
         </div>
       </nav>
       {error && <ErrorCard error={error}/>}
+      {loading && <Loading/>} 
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
-      <Route path="/:id" element={!error && <SinglePoem poems={poems} setError={setError}/>}/>
-      <Route path="/form" element={<Form handleFormClick={handleFormClick} />}/>
+      <Route path="/:id" element={!error && <SinglePoem poems={poems} setError={setError} setLoading={setLoading}/>}/>
+      <Route path="/form" element={<Form handleFormClick={handleFormClick} setError={setError} setLoading={setLoading} />}/>
       <Route path="*" element={<ErrorCard error={error}/>}/>
     </Routes>
     </div>

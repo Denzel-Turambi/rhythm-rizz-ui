@@ -6,14 +6,22 @@ import PropTypes from 'prop-types'
 import './SinglePoem.css'
 
 
-function SinglePoem({ poems, setError }) {
+function SinglePoem({ poems, setError, setLoading }) {
   
   const [selectedPoem, setSelectedPoem] = useState({})
   const [randomPoemID, setRandomPoemID] = useState(null)
   const { id } = useParams()
 
   useEffect(() => {
-    getPoemById(id).then(data => setSelectedPoem(data.poem)).catch(err=>setError(err.message))
+    setLoading(true)
+    getPoemById(id)
+    .then(data => 
+      {setSelectedPoem(data.poem)
+       setLoading(false)})
+       .catch(err => {
+        setLoading(false)
+       })
+
     getPoems().then(data => {
       
       const randomIndex = Math.floor(Math.random() * data.poems.length)
