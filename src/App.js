@@ -59,7 +59,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
       <Route path="/:id" element={!error && <SinglePoem poems={poems} setError={setError} setLoading={setLoading}/>}/>
-      <Route path="/form" element={<Form handleFormClick={handleFormClick} setLoading={setLoading} />}/>
+      <Route path="/form" element={<Form handleFormClick={handleFormClick} setError={setError} setLoading={setLoading} />}/>
       <Route path="*" element={<ErrorCard error={error}/>}/>
     </Routes>
     </div>

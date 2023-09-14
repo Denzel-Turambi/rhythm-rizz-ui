@@ -4,7 +4,7 @@ import { postPoem } from "../ApiCalls";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Form({ handleFormClick, setLoading }) {
+function Form({ handleFormClick, setError, setLoading }) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [poem, setPoem] = useState("");
@@ -20,8 +20,8 @@ function Form({ handleFormClick, setLoading }) {
       handleFormClick(data)
       setLoading(false)
     })
-    .catch(error => {
-      throw error
+    .catch(err => {setError(err.message)
+      setLoading(false)
     })
    
     clearInput();
