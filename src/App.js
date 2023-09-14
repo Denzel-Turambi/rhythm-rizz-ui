@@ -1,18 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import './ErrorHandling/ErrorHandling.css';
 import { useState, useEffect } from 'react';
 import { getPoems, postPoem } from './ApiCalls';
 import Poems from './Poems';
 import Form from './Form/Form';
 import SinglePoem from './singlePoem/SinglePoem';
-import {Routes, Route, Link} from "react-router-dom"
-import Error404 from './ErrorHandling/Error404';
+import {Routes, Route, Link, NavLink, useLocation} from "react-router-dom"
+import ErrorCard from './ErrorHandling/ErrorCard';
 
 
 function App() {
   const [poems, setPoems] = useState([])
   const [error, setError] = useState('')
+  const location = useLocation().pathname
   // const params = useParams()
+
+  useEffect(() => {
+    setError('')
+  }, [location])
 
   useEffect(() => {
     getPoems()
@@ -41,11 +47,12 @@ function App() {
           </Link>
         </div>
       </nav>
+      {error && <ErrorCard error={error}/>}
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
-      <Route path="/:id" element={<SinglePoem poems={poems} setError={setError}/>}/>
+      <Route path="/:id" element={!error && <SinglePoem poems={poems} setError={setError}/>}/>
       <Route path="/form" element={<Form handleFormClick={handleFormClick} />}/>
-      <Route path="*" element={<Error404 />}/>
+      <Route path="*" element={<ErrorCard error={error}/>}/>
     </Routes>
     </div>
   );
