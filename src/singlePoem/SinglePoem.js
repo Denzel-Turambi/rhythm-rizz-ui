@@ -4,15 +4,17 @@ import { useState, useEffect } from "react";
 import { getPoemById } from "../ApiCalls";
 import PropTypes from 'prop-types'
 
-function SinglePoem({ poems }) {
+function SinglePoem({ poems, setError }) {
   const [selectedPoem, setSelectedPoem] = useState({})
   const { id } = useParams()
 
-  useEffect(() => {
-    getPoemById(id).then(data => setSelectedPoem(data.poem))
-    }, [])
-
-      
+  useEffect(() => { 
+      getPoemById(id)
+      .then(data => setSelectedPoem(data.poem))
+      .catch(error => {setError(error.message)
+      console.log(error.message)})
+  }, [id]);
+  
   const poemCard = selectedPoem ? (
     <SinglePoemCard
       id={selectedPoem.id}
@@ -23,7 +25,9 @@ function SinglePoem({ poems }) {
     />
   ) : null
 
-  return <div>{poemCard}</div>;
+  if (selectedPoem) {
+    return <div>{poemCard}</div>;
+  }
   }
 
 export default SinglePoem;
