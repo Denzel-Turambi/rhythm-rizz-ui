@@ -30,7 +30,9 @@ function App() {
       setPoems(data.poems)
       setLoading(false)
     })
-    .catch(err => setError(err.message))
+    .catch(err => {setError(err.message)
+    setLoading(false)}
+    )
   }, [])
 
 
@@ -56,7 +58,7 @@ function App() {
       {loading && <Loading/>} 
     <Routes>
       <Route path="/" element={<Poems poems={poems} />}/>
-      <Route path="/:id" element={!error && <SinglePoem poems={poems} setError={setError}/>}/>
+      <Route path="/:id" element={!error && <SinglePoem poems={poems} setError={setError} setLoading={setLoading}/>}/>
       <Route path="/form" element={<Form handleFormClick={handleFormClick} setLoading={setLoading} />}/>
       <Route path="*" element={<ErrorCard error={error}/>}/>
     </Routes>
