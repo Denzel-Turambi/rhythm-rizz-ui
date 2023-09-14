@@ -17,7 +17,11 @@ function Form({ handleFormClick }) {
     };
     postPoem(newPoem).then((data) => {
       handleFormClick(data)
-    });
+    })
+    .catch(error => {
+      throw error
+    })
+   
     clearInput();
   }
 

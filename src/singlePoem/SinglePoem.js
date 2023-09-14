@@ -5,11 +5,12 @@ import { getPoemById, getPoems } from "../ApiCalls";
 import PropTypes from 'prop-types'
 import './SinglePoem.css'
 
-function SinglePoem({poems}) {
+
+function SinglePoem({ poems, setError }) {
+  
   const [selectedPoem, setSelectedPoem] = useState({})
   const [randomPoemID, setRandomPoemID] = useState(null)
   const { id } = useParams()
-
 
   useEffect(() => {
     getPoemById(id).then(data => setSelectedPoem(data.poem))
@@ -23,6 +24,7 @@ function SinglePoem({poems}) {
       
   const poemCard = selectedPoem && (
     <>
+  
     <SinglePoemCard
       id={selectedPoem.id}
       key={selectedPoem.id}
