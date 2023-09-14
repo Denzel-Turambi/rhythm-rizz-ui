@@ -19,7 +19,11 @@ function Form({ handleFormClick, setLoading }) {
       setLoading(true)
       handleFormClick(data)
       setLoading(false)
-    });
+    })
+    .catch(error => {
+      throw error
+    })
+   
     clearInput();
   }
 
