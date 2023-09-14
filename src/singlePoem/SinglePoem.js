@@ -13,13 +13,13 @@ function SinglePoem({ poems, setError }) {
   const { id } = useParams()
 
   useEffect(() => {
-    getPoemById(id).then(data => setSelectedPoem(data.poem))
+    getPoemById(id).then(data => setSelectedPoem(data.poem)).catch(err=>setError(err.message))
     getPoems().then(data => {
       
       const randomIndex = Math.floor(Math.random() * data.poems.length)
       const randomPoemID =  data.poems[randomIndex].id
       setRandomPoemID(randomPoemID)
-     } )
+     } ).catch(err=>setError(err.message))
     }, [id])
       
   const poemCard = selectedPoem && (
