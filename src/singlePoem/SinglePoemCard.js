@@ -1,5 +1,5 @@
 import './SinglePoemCard.css'
-import '../PoemCard.css'
+import '../AllPoems/PoemCard'
 
 function SinglePoemCard({ title, author, poem }) {
 
