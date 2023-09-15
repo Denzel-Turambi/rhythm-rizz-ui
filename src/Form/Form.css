@@ -21,3 +21,10 @@
   background: rgb(233, 24, 24);
   padding: 16px;
 }
+
+.required {
+  background: red;
+  color: white;
+  margin: 5px;
+}
+

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Form.css";
 import { postPoem } from "../ApiCalls";
 import { Link } from "react-router-dom";
@@ -8,7 +8,16 @@ function Form({ handleFormClick, setError, setLoading }) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [poem, setPoem] = useState("");
+  const [isFormValid, setIsFormValid] = useState(false)
 
+  useEffect(() => {
+    if(!title || !author || !poem) {
+      setIsFormValid(true)
+    } else {
+      setIsFormValid(false)
+    }
+  }, [title, author, poem]) 
+  
   function submitPoem(event) {
     const newPoem = {
       title,
@@ -41,7 +50,10 @@ function Form({ handleFormClick, setError, setLoading }) {
         placeholder="Title"
         name="title"
         value={title}
-        onChange={(event) => setTitle(event.target.value)}
+        onChange={(event) => 
+          setTitle(event.target.value)
+          }
+        
       />
       <input
         className="form-input"
@@ -49,7 +61,10 @@ function Form({ handleFormClick, setError, setLoading }) {
         placeholder="Author"
         name="author"
         value={author}
-        onChange={(event) => setAuthor(event.target.value)}
+        onChange={(event) => 
+          setAuthor(event.target.value)
+         }
+        
       />
       <textarea
         rows="8"
@@ -59,18 +74,23 @@ function Form({ handleFormClick, setError, setLoading }) {
         placeholder="Poem"
         name="poem"
         value={poem}
-        onChange={(event) => setPoem(event.target.value)}
+        onChange={(event) => 
+          setPoem(event.target.value)
+         }
+  
       />
+      <p className="required">*All form inputs required</p>
       <Link
         to={"/"}
         className="form-button"
-        onClick={(event) => submitPoem(event)}
-      >
-        Submit
+        onClick={(event) => {submitPoem(event)}}
+        style={isFormValid ? {pointerEvents: "none"}:null}
+      > Submit
       </Link>
     </form>
   );
 }
+
 
 export default Form;
 
