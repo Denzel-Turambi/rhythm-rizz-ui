@@ -7,7 +7,6 @@ import './SinglePoem.css'
 
 
 function SinglePoem({ poems, setError, setLoading }) {
-  
   const [selectedPoem, setSelectedPoem] = useState({})
   const [randomPoemID, setRandomPoemID] = useState(null)
   const { id } = useParams()
@@ -55,5 +54,7 @@ SinglePoem.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
     poem: PropTypes.string
-  }))
+  })),
+  setError: PropTypes.func,
+  setLoading: PropTypes.func
 }
