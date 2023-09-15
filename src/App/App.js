@@ -1,13 +1,13 @@
 import './App.css';
-import './ErrorHandling/ErrorHandling.css';
+import '../ErrorHandling/ErrorHandling.css';
 import { useState, useEffect } from 'react';
-import { getPoems } from './ApiCalls';
-import Poems from './Poems';
-import Form from './Form/Form';
-import SinglePoem from './singlePoem/SinglePoem';
+import { getPoems } from '../ApiCalls';
+import Poems from '../AllPoems/Poems';
+import Form from '../Form/Form';
+import SinglePoem from '../singlePoem/SinglePoem';
 import {Routes, Route, Link, useLocation} from "react-router-dom";
-import Loading from './Loading';
-import ErrorCard from './ErrorHandling/ErrorCard';
+import Loading from '../Loading/Loading';
+import ErrorCard from '../ErrorHandling/ErrorCard';
 
 
 function App() {
