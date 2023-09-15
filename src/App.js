@@ -44,7 +44,9 @@ function App() {
   return (
     <div className="App">
        <nav className="nav">
-        <h1 className="logo-title">Rhythm & Rizz</h1>
+        <Link to={"/"} className="link-title">
+          <h1 className="logo-title">Rhythm & Rizz</h1>
+        </Link>
         <div className="nav-buttons">
           <Link to={"/"} className="nav-button">
           All Poems
