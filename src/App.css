@@ -7,6 +7,10 @@ body {
   overflow: hidden;
 }
 
+.link-title {
+  text-decoration: none;
+}
+
 .logo-title {
   color: white;
   font-family: 'Alice', serif;
