@@ -75,12 +75,7 @@ function Form({ handleFormClick, setError, setLoading }) {
 export default Form;
 
 Form.propTypes = {
-  poems: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      title: PropTypes.string,
-      author: PropTypes.string,
-      poem: PropTypes.string,
-    })
-  )
+  handleFormClick: PropTypes.func,
+  setError: PropTypes.func,
+  setLoading: PropTypes.func
 };

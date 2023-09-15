@@ -1,7 +1,9 @@
 import './ErrorHandling.css'
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
-function ErrorCard({error}) {
+function ErrorCard({ error }) {
+  console.log(error, "errorhndling")
   return (
     <div className="error-container">
       <div className="error-box">
@@ -17,3 +19,7 @@ function ErrorCard({error}) {
 }
 
 export default ErrorCard;
+
+ErrorCard.propTypes = {
+  error: PropTypes.string
+}
