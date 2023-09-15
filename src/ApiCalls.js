@@ -1,5 +1,5 @@
 function getPoems() {
-  return fetch('http://localhost:3000/api/v1/poems')
+  return fetch('https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems')
   .then(res => {
     if(!res.ok){
       throw new Error (`${res.status}`)
@@ -9,7 +9,7 @@ function getPoems() {
 }
 
 function postPoem(poem) {
-  return fetch('http://localhost:3000/api/v1/poems', {
+  return fetch('https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems', {
     method: 'POST',
     body: JSON.stringify(poem),
     headers: {
@@ -24,7 +24,7 @@ function postPoem(poem) {
 }
 
 function getPoemById(id) {
-  return fetch(`http://localhost:3000/api/v1/poems/${id}`)
+  return fetch(`https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems/${id}`)
   .then((res) => {
     if(!res.ok){
       throw new Error (`${res.status}`)
