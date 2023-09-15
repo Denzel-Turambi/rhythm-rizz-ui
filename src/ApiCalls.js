@@ -1,6 +1,3 @@
-
-
-
 function getPoems() {
   return fetch('http://localhost:3000/api/v1/poems')
   .then(res => {
@@ -36,7 +33,6 @@ function getPoemById(id) {
   })
 }
   
-
 export {
   getPoems,
   getPoemById,
