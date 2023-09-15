@@ -40,6 +40,7 @@
   overflow: auto;
   padding-left: 20px;
   padding-right: 20px;
+  white-space: pre-line;
 }
 
 @media screen and (max-width: 975px) {

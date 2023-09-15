@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 
 function ErrorCard({ error }) {
-  console.log(error, "errorhndling")
   return (
     <div className="error-container">
       <div className="error-box">
