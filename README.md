@@ -6,7 +6,8 @@ Introducing Rhythm & Rizz, a revolutionary poetry platform designed for the mode
 2. Fork and clone the [backend repo](https://github.com/Scotty-Brown/rhythm-rizz-api.git) and follow the instructions there
 3. After cloning this repo down, `cd` into the project and run `npm install`
 4. Once the installation is done, you can now run `npm start` to run the application in your web browser
-
+OR...
+Click this [link](https://rhythm-rizz-ui.vercel.app/) to visit the app!
 ## PREVIEW OF APPLICATION
 ![ezgif com-video-to-gif (8)](https://user-images.githubusercontent.com/122255250/268409349-fa58edd7-d184-416b-bd3f-aaee41d7f2bc.gif)
 
