@@ -1,4 +1,4 @@
-describe('all ellements on the home page', () => {
+describe('Home Page Spec', () => {
   beforeEach(()=>{
     cy.intercept('GET', 'https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems', {
       statusCode: 200,
@@ -6,7 +6,7 @@ describe('all ellements on the home page', () => {
     }).as("poems")
   })
 
-  it('should have a header, nav options, and poems displayed', () => {
+  it('Should have a header, nav options, and poems displayed', () => {
     cy.visit('https://rhythm-rizz-ui.vercel.app/')
     .wait("@poems")
     .get('.nav').contains('.logo-title', 'Rhythm & Rizz').should('be.visible')

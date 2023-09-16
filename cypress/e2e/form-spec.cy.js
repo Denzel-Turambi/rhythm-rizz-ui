@@ -1,4 +1,4 @@
-describe('New poem form', () => {
+describe('New Poem Form', () => {
   beforeEach(()=>{
     cy.intercept('GET', 'https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems', {
       statusCode: 200,

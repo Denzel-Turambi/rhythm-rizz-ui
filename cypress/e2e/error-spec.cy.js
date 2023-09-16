@@ -1,4 +1,4 @@
-describe('Error Componenet testing', () => {
+describe('Error Componenet Spec', () => {
   it('Should show a 404 error if page load fails', () => {
     cy.intercept('GET', 'https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems', {
       statusCode: 404,
