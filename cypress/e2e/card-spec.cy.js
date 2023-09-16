@@ -1,17 +1,17 @@
 describe('All ellements on the home page', () => {
   beforeEach(()=>{
-    cy.intercept('GET', 'http://localhost:3000/api/v1/poems', {
+    cy.intercept('GET', 'https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems', {
       statusCode: 201,
       fixture: 'poems'
     }).as("poems")
-    cy.intercept('GET', 'http://localhost:3000/api/v1/poems/2', {
+    cy.intercept('GET', 'https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems/2', {
       statusCode: 201,
       fixture: 'selectPoem'
     }).as("selectPoem")
   })
 
   it('should show a selected poem page', () => {
-    cy.visit('http://localhost:3001/').wait("@poems")
+    cy.visit('https://rhythm-rizz-ui.vercel.app/').wait("@poems")
     .get('.poem-card').first().click().wait("@selectPoem")
     .url().should('contain', '/2')
     .get('.single-poem-card').should('have.length', 1).should('be.visible')

@@ -1,13 +1,13 @@
 describe('all ellements on the home page', () => {
   beforeEach(()=>{
-    cy.intercept('GET', 'http://localhost:3000/api/v1/poems', {
+    cy.intercept('GET', 'https://rhythm-rizz-api-git-main-scotty-brown.vercel.app/api/v1/poems', {
       statusCode: 200,
       fixture: 'poems'
     }).as("poems")
   })
 
   it('should have a header, nav options, and poems displayed', () => {
-    cy.visit('http://localhost:3001/')
+    cy.visit('https://rhythm-rizz-ui.vercel.app/')
     .wait("@poems")
     .get('.nav').contains('.logo-title', 'Rhythm & Rizz').should('be.visible')
     .get('.nav-button').contains('.nav-button', 'Add New Poem').should('be.visible').click()
